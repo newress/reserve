@@ -11,8 +11,8 @@ function AddAppointment(){
           <input type="input" id='userName' />
         </li>
         <li>
-          <label htmlFor='suesrChildren'>애기명</label>
-          <input type="input" id='suesrChildren' />
+          <label htmlFor='uesrChildren'>애기명</label>
+          <input type="input" id='uesrChildren' />
         </li>
         <li>
           <label htmlFor='userDate'>예약일</label>

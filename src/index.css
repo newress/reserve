@@ -57,7 +57,7 @@ h3{
   margin-bottom:20px;
   text-align:left;
 }
-#appoint>p>input{
+#appoint>p>input>button{
   width:788px;
   margin-left:15%;
   border:none;
@@ -76,7 +76,7 @@ h3{
 }
 #search>p{
   display:flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items:center;
   padding:0 20px;
   position:relative;

@@ -5,14 +5,13 @@ function DropDown(){
   return(
     <div id="DropDown">
       <ul>
-        <li id="suesrChildren">애기이름</li>
+        <li id="uesrChildren">애기이름</li>
         <li id="userName">예약자명</li>
         <li id="userDate">날자</li>
       </ul>
     </div>
   )
 }
-
 
 function Search(){
   return(

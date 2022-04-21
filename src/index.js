@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 //component
-
+import AddAppointment from './component/AddAppoinment';
+import Search from './component/Search';
+import AddInfo from './component/AddInfo';
 //source
 import { BiArchive } from "react-icons/bi";
 import './index.css';
-import AddAppointment from './component/AddAppoinment';
-import Search from './component/Search';
+
 
 function App(){
   return(
@@ -18,7 +19,7 @@ function App(){
       <Search />
       <div id="list">
         <ul>
-          <li>반복문</li>
+          <AddInfo />
         </ul>
       </div>
 
