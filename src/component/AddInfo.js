@@ -1,16 +1,16 @@
 import React from 'react';
 import { BiTrash } from "react-icons/bi";
 
-function AddInfo(){
+function AddInfo({appointment}){
   return(
     <li id='AddInfo'>
       <dl>
-        <dt>이름</dt>
+        <dt>{appointment.petName}</dt>
         <dd className='owner'>
-          <dfn>예약자명 :</dfn>
+          <dfn>예약자명 : {appointment.ownerName}</dfn>
         </dd>
-        <dd className='desc'>설명</dd>
-        <dd className='date'>날자</dd>
+        <dd className='desc'>{appointment.aptNotes}</dd>
+        <dd className='date'>{appointment.aptDate}</dd>
       </dl>
       <p>
         <button><BiTrash /></button>
