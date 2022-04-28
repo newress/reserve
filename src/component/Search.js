@@ -1,31 +1,44 @@
-import React from "react";
-import { BiSearch, BiCaretDown } from "react-icons/bi";
+import {useState} from 'react'
+import {BiSearch , BiCaretDown} from 'react-icons/bi'
 
-function DropDown(){
-  return(
-    <div id="DropDown">
-      <ul>
-        <li id="uesrChildren">애기이름</li>
-        <li id="userName">예약자명</li>
-        <li id="userDate">날자</li>
-      </ul>
-    </div>
+function DropDown({toggleSort}){
+  if(!toggleSort){
+    return
+  }
+  return (
+    <ul>
+      <li>애기이름</li>
+      <li>예약자명</li>
+      <li>날짜</li>
+    </ul>
   )
 }
 
-function Search(){
-  return(
+function Search({query,onQueryChange}){
+  let [toggleSort,setToggleSort] = useState(false);
+  return (
     <div id="search">
       <p>
         <BiSearch />
-        <input type="text" placeholder="search" />
-        <button type="button">정렬하기 <BiCaretDown /></button>
+        <input 
+          type="text" 
+          placeholder="search"
+          value={query}
+          onChange = {
+            (event) => {onQueryChange(event.target.value)}
+          }
+           />
+        <button 
+          type="button"
+          onClick = {
+            () => { setToggleSort(!toggleSort)}
+          }>정렬하기 
+        <BiCaretDown /></button>
       </p>
-      <DropDown />
+    <DropDown
+      toggleSort = {toggleSort} />
     </div>
   )
 }
-
-
 
 export default Search
