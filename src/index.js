@@ -16,6 +16,10 @@ function App(){
   let [appointmentList,setAppointmentList] = useState([])
   //  search
   let [query,setQuery] = useState('')
+  //  sort
+  let [sortBy, setSortBy] = useState('petName')
+  let [orderBy, setOrderBy] = useState('asc')
+  
 
 //  검색 필터 -> 배열 -> addInfo 
   const filterAppointment = appointmentList.filter(
@@ -25,7 +29,11 @@ function App(){
         item.ownerName.toLowerCase().includes(query.toLowerCase())
       )
     }
-  )
+  ).sort( (a, b) => {
+    let order = (orderBy === 'asc')? 1: -1;
+    return(
+    a[sortBy].toLowerCase() < b[sortBy].toLowerCase()? -1 * order : 1 * order)
+  } )
   
   //  callback
   const fetchData = useCallback( () => {
@@ -52,6 +60,10 @@ function App(){
       <Search
         query = {query}
         onQueryChange = { myQuery => setQuery(myQuery)}
+        orderBy = {orderBy}
+        sortBy  = {sortBy}
+        onSortByChange = {mySort => setSortBy(mySort)}
+        onOrderByChange = {myOrder => setOrderBy(myOrder)}
       />
       <div id="list">
         <ul>
